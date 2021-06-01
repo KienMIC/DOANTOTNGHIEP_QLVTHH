@@ -53,6 +53,7 @@ namespace DoAn1
             this.rbViTri = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.rbtnToaDo = new System.Windows.Forms.RibbonButton();
+            this.rbLichSuViTri = new System.Windows.Forms.RibbonButton();
             this.rbHangNhap = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
@@ -70,16 +71,15 @@ namespace DoAn1
             this.rbtnTKTTVitri = new System.Windows.Forms.RibbonButton();
             this.rbtnTKHH = new System.Windows.Forms.RibbonButton();
             this.rbAbout = new System.Windows.Forms.RibbonTab();
-            this.tabControl1 = new MdiTabControl.TabControl();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
-            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab9 = new System.Windows.Forms.RibbonTab();
             this.ribbonCheckBox1 = new System.Windows.Forms.RibbonCheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tcMain = new MdiTabControl.TabControl();
+            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton18 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton22 = new System.Windows.Forms.RibbonButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rbLichSuViTri = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -147,7 +147,7 @@ namespace DoAn1
             this.rbtnQuanLyTaiKhoan.Name = "rbtnQuanLyTaiKhoan";
             this.rbtnQuanLyTaiKhoan.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnQuanLyTaiKhoan.SmallImage")));
             this.rbtnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
-            this.rbtnQuanLyTaiKhoan.Click += new System.EventHandler(this.ribbonButton2_Click);
+            this.rbtnQuanLyTaiKhoan.Click += new System.EventHandler(this.rbtnQuanlytaikhoan_Click);
             // 
             // ribbonPanel3
             // 
@@ -165,7 +165,7 @@ namespace DoAn1
             this.rbtnSaoLuu.Name = "rbtnSaoLuu";
             this.rbtnSaoLuu.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSaoLuu.SmallImage")));
             this.rbtnSaoLuu.Text = "Sao lưu/Khôi phục CSDL";
-            this.rbtnSaoLuu.Click += new System.EventHandler(this.ribbonButton3_Click);
+            this.rbtnSaoLuu.Click += new System.EventHandler(this.rbtnSaoLuuDuLieu_Click);
             // 
             // ribbonPanel4
             // 
@@ -183,7 +183,7 @@ namespace DoAn1
             this.rbtnDangXuat.Name = "rbtnDangXuat";
             this.rbtnDangXuat.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDangXuat.SmallImage")));
             this.rbtnDangXuat.Text = "Đăng xuất";
-            this.rbtnDangXuat.Click += new System.EventHandler(this.ribbonButton4_Click);
+            this.rbtnDangXuat.Click += new System.EventHandler(this.rbtnDangXuat_Click);
             // 
             // rbDanhMuc
             // 
@@ -212,7 +212,7 @@ namespace DoAn1
             this.rbtnDMNhanVien.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDMNhanVien.SmallImage")));
             this.rbtnDMNhanVien.Text = "DM Nhân viên";
             this.rbtnDMNhanVien.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.rbtnDMNhanVien.Click += new System.EventHandler(this.ribbonButton5_Click);
+            this.rbtnDMNhanVien.Click += new System.EventHandler(this.rbtnDMNhanVien_Click);
             // 
             // ribbonPanel6
             // 
@@ -230,7 +230,7 @@ namespace DoAn1
             this.rbtnDMKhachHang.Name = "rbtnDMKhachHang";
             this.rbtnDMKhachHang.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDMKhachHang.SmallImage")));
             this.rbtnDMKhachHang.Text = "DM Khách hàng";
-            this.rbtnDMKhachHang.Click += new System.EventHandler(this.ribbonButton6_Click);
+            this.rbtnDMKhachHang.Click += new System.EventHandler(this.rbtnDMKhachHang_Click);
             // 
             // ribbonPanel7
             // 
@@ -248,7 +248,7 @@ namespace DoAn1
             this.rbtnDMHangHoa.Name = "rbtnDMHangHoa";
             this.rbtnDMHangHoa.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDMHangHoa.SmallImage")));
             this.rbtnDMHangHoa.Text = "DM Hàng hóa";
-            this.rbtnDMHangHoa.Click += new System.EventHandler(this.ribbonButton7_Click);
+            this.rbtnDMHangHoa.Click += new System.EventHandler(this.rbtnDMHangHoa_Click);
             // 
             // ribbonPanel8
             // 
@@ -266,7 +266,7 @@ namespace DoAn1
             this.rbtnDMLoaiHangHoa.Name = "rbtnDMLoaiHangHoa";
             this.rbtnDMLoaiHangHoa.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDMLoaiHangHoa.SmallImage")));
             this.rbtnDMLoaiHangHoa.Text = "DM Loại hàng hóa";
-            this.rbtnDMLoaiHangHoa.Click += new System.EventHandler(this.ribbonButton8_Click);
+            this.rbtnDMLoaiHangHoa.Click += new System.EventHandler(this.rbtnDMLoaiHangHoa_Click);
             // 
             // ribbonPanel9
             // 
@@ -284,7 +284,7 @@ namespace DoAn1
             this.rbtnDMDonViTinh.Name = "rbtnDMDonViTinh";
             this.rbtnDMDonViTinh.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDMDonViTinh.SmallImage")));
             this.rbtnDMDonViTinh.Text = "DM Đơn vị tính";
-            this.rbtnDMDonViTinh.Click += new System.EventHandler(this.ribbonButton9_Click);
+            this.rbtnDMDonViTinh.Click += new System.EventHandler(this.rbtnDMDonViTinh_Click);
             // 
             // rbViTri
             // 
@@ -309,7 +309,21 @@ namespace DoAn1
             this.rbtnToaDo.Name = "rbtnToaDo";
             this.rbtnToaDo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnToaDo.SmallImage")));
             this.rbtnToaDo.Text = "Tọa độ vị trí hàng hóa";
-            this.rbtnToaDo.Click += new System.EventHandler(this.ribbonButton10_Click);
+            this.rbtnToaDo.Click += new System.EventHandler(this.rbtnViTri_Click);
+            // 
+            // rbLichSuViTri
+            // 
+            this.rbLichSuViTri.DropDownResizable = true;
+            this.rbLichSuViTri.FlashEnabled = true;
+            this.rbLichSuViTri.Image = ((System.Drawing.Image)(resources.GetObject("rbLichSuViTri.Image")));
+            this.rbLichSuViTri.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbLichSuViTri.LargeImage")));
+            this.rbLichSuViTri.MinimumSize = new System.Drawing.Size(100, 0);
+            this.rbLichSuViTri.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
+            this.rbLichSuViTri.Name = "rbLichSuViTri";
+            this.rbLichSuViTri.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbLichSuViTri.SmallImage")));
+            this.rbLichSuViTri.Text = "Tra cứu lịch sử vị trí";
+            this.rbLichSuViTri.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rbLichSuViTri.Click += new System.EventHandler(this.rbLichSuViTri_Click);
             // 
             // rbHangNhap
             // 
@@ -341,7 +355,7 @@ namespace DoAn1
             this.rbtnLapPN.Name = "rbtnLapPN";
             this.rbtnLapPN.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLapPN.SmallImage")));
             this.rbtnLapPN.Text = "Lập phiếu nhập";
-            this.rbtnLapPN.Click += new System.EventHandler(this.ribbonButton13_Click);
+            this.rbtnLapPN.Click += new System.EventHandler(this.rbtnPhieuNhap_Click);
             // 
             // rbHangXuat
             // 
@@ -373,7 +387,7 @@ namespace DoAn1
             this.rbtnLapPX.Name = "rbtnLapPX";
             this.rbtnLapPX.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLapPX.SmallImage")));
             this.rbtnLapPX.Text = "Lập phiếu xuất";
-            this.rbtnLapPX.Click += new System.EventHandler(this.ribbonButton21_Click);
+            this.rbtnLapPX.Click += new System.EventHandler(this.rbtnPhieuXuat_Click);
             // 
             // rbBaoCao
             // 
@@ -400,7 +414,7 @@ namespace DoAn1
             this.rbtnBCHangTon.Name = "rbtnBCHangTon";
             this.rbtnBCHangTon.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnBCHangTon.SmallImage")));
             this.rbtnBCHangTon.Text = "Thông tin hàng hóa trong kho";
-            this.rbtnBCHangTon.Click += new System.EventHandler(this.ribbonButton15_Click);
+            this.rbtnBCHangTon.Click += new System.EventHandler(this.rbtnBCTTHangHoa_Click);
             // 
             // rbtnBCHangNhap
             // 
@@ -410,7 +424,7 @@ namespace DoAn1
             this.rbtnBCHangNhap.Name = "rbtnBCHangNhap";
             this.rbtnBCHangNhap.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnBCHangNhap.SmallImage")));
             this.rbtnBCHangNhap.Text = "Hàng nhập";
-            this.rbtnBCHangNhap.Click += new System.EventHandler(this.ribbonButton16_Click);
+            this.rbtnBCHangNhap.Click += new System.EventHandler(this.rbtnBaoCaoHangNhap_Click);
             // 
             // rbtnBCHangXuat
             // 
@@ -420,7 +434,7 @@ namespace DoAn1
             this.rbtnBCHangXuat.Name = "rbtnBCHangXuat";
             this.rbtnBCHangXuat.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnBCHangXuat.SmallImage")));
             this.rbtnBCHangXuat.Text = "Hàng xuất";
-            this.rbtnBCHangXuat.Click += new System.EventHandler(this.ribbonButton17_Click);
+            this.rbtnBCHangXuat.Click += new System.EventHandler(this.rbtnBaoCaoHangXuat_Click);
             // 
             // ribbonPanel16
             // 
@@ -439,7 +453,7 @@ namespace DoAn1
             this.rbtnTKTTVitri.Name = "rbtnTKTTVitri";
             this.rbtnTKTTVitri.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnTKTTVitri.SmallImage")));
             this.rbtnTKTTVitri.Text = "Thống kê trạng thái vị trí";
-            this.rbtnTKTTVitri.Click += new System.EventHandler(this.ribbonButton19_Click);
+            this.rbtnTKTTVitri.Click += new System.EventHandler(this.rbtnThongKeTTViTri_Click);
             // 
             // rbtnTKHH
             // 
@@ -449,38 +463,17 @@ namespace DoAn1
             this.rbtnTKHH.Name = "rbtnTKHH";
             this.rbtnTKHH.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnTKHH.SmallImage")));
             this.rbtnTKHH.Text = "Thống kê hàng hóa tại các vị trí";
-            this.rbtnTKHH.Click += new System.EventHandler(this.ribbonButton20_Click);
+            this.rbtnTKHH.Click += new System.EventHandler(this.rbtnHH_VT_Click);
             // 
             // rbAbout
             // 
             this.rbAbout.Name = "rbAbout";
             this.rbAbout.Text = "About";
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 136);
-            this.tabControl1.MenuRenderer = null;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Size = new System.Drawing.Size(959, 542);
-            this.tabControl1.TabCloseButtonImage = null;
-            this.tabControl1.TabCloseButtonImageDisabled = null;
-            this.tabControl1.TabCloseButtonImageHot = null;
-            this.tabControl1.TabIndex = 1;
-            // 
             // ribbonTab2
             // 
             this.ribbonTab2.Name = "ribbonTab2";
             this.ribbonTab2.Text = "Chỉnh sửa";
-            // 
-            // ribbonButton12
-            // 
-            this.ribbonButton12.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.Image")));
-            this.ribbonButton12.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.LargeImage")));
-            this.ribbonButton12.Name = "ribbonButton12";
-            this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
             // 
             // ribbonTab9
             // 
@@ -490,6 +483,42 @@ namespace DoAn1
             // ribbonCheckBox1
             // 
             this.ribbonCheckBox1.Name = "ribbonCheckBox1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(158, 566);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 31);
+            this.label2.TabIndex = 3;
+            // 
+            // tcMain
+            // 
+            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tcMain.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tcMain.BackgroundImage = global::DoAn1.Properties.Resources.Warehouse_Background1;
+            this.tcMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tcMain.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.tcMain.BorderColorDisabled = System.Drawing.SystemColors.Control;
+            this.tcMain.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tcMain.Location = new System.Drawing.Point(0, 135);
+            this.tcMain.MenuRenderer = null;
+            this.tcMain.Name = "tcMain";
+            this.tcMain.Size = new System.Drawing.Size(959, 549);
+            this.tcMain.TabCloseButtonImage = null;
+            this.tcMain.TabCloseButtonImageDisabled = null;
+            this.tcMain.TabCloseButtonImageHot = null;
+            this.tcMain.TabIndex = 1;
+            // 
+            // ribbonButton12
+            // 
+            this.ribbonButton12.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.Image")));
+            this.ribbonButton12.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.LargeImage")));
+            this.ribbonButton12.Name = "ribbonButton12";
+            this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
             // 
             // ribbonButton14
             // 
@@ -512,29 +541,6 @@ namespace DoAn1
             this.ribbonButton22.Name = "ribbonButton22";
             this.ribbonButton22.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton22.SmallImage")));
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(158, 566);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 31);
-            this.label2.TabIndex = 3;
-            // 
-            // rbLichSuViTri
-            // 
-            this.rbLichSuViTri.DropDownResizable = true;
-            this.rbLichSuViTri.FlashEnabled = true;
-            this.rbLichSuViTri.Image = ((System.Drawing.Image)(resources.GetObject("rbLichSuViTri.Image")));
-            this.rbLichSuViTri.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbLichSuViTri.LargeImage")));
-            this.rbLichSuViTri.MinimumSize = new System.Drawing.Size(100, 0);
-            this.rbLichSuViTri.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
-            this.rbLichSuViTri.Name = "rbLichSuViTri";
-            this.rbLichSuViTri.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbLichSuViTri.SmallImage")));
-            this.rbLichSuViTri.Text = "Tra cứu lịch sử vị trí";
-            this.rbLichSuViTri.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.rbLichSuViTri.Click += new System.EventHandler(this.rbLichSuViTri_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -543,13 +549,13 @@ namespace DoAn1
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(959, 680);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tcMain);
             this.Controls.Add(this.ribbon1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DEMO | QUẢN LÝ VỊ TRÍ HÀNG HÓA TRONG KHO";
+            this.Text = "DEMO | QUẢN LÝ VỊ TRÍ HÀNG HÓA | ĐỒ ÁN TỐT NGHIỆP | © 2021 KKH TEAM";
             this.Load += new System.EventHandler(this.Trangchu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -596,7 +602,7 @@ namespace DoAn1
         private System.Windows.Forms.RibbonPanel ribbonPanel16;
         private System.Windows.Forms.RibbonButton rbtnTKTTVitri;
         private System.Windows.Forms.RibbonButton rbtnTKHH;
-        private MdiTabControl.TabControl tabControl1;
+        private MdiTabControl.TabControl tcMain;
         public System.Windows.Forms.RibbonTab ribbonTab2;
         private System.Windows.Forms.RibbonPanel ribbonPanel17;
         private System.Windows.Forms.RibbonButton rbtnLapPX;

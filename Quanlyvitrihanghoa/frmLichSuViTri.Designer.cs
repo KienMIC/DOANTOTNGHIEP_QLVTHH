@@ -116,7 +116,7 @@ namespace DoAn1.Quanlyvitrihanghoa
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(831, 461);
+            this.btnReload.Location = new System.Drawing.Point(831, 452);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(100, 39);
             this.btnReload.TabIndex = 2;

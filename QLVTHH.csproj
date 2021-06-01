@@ -588,6 +588,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Quanlyhethong\frmSuaTaiKhoan.resx">
       <DependentUpon>frmSuaTaiKhoan.cs</DependentUpon>
@@ -762,6 +763,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Warehouse Background.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Release\TempPE\" />
