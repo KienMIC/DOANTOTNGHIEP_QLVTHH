@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_VITRI_HANGHOA" targetNamespace="http://tempuri.org/DS_VITRI_HANGHOA.xsd" xmlns:mstns="http://tempuri.org/DS_VITRI_HANGHOA.xsd" xmlns="http://tempuri.org/DS_VITRI_HANGHOA.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLVTHHConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLVTHHConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DoAn1.Properties.Settings.GlobalReference.Default.QLVTHHConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BC_VITRIHANGHOATableAdapter" GeneratorDataComponentClassName="BC_VITRIHANGHOATableAdapter" Name="BC_VITRIHANGHOA" UserDataComponentName="BC_VITRIHANGHOATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLVTHHConnectionString (Settings)" DbObjectName="QLVTHH.dbo.BC_VITRIHANGHOA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MaHH, TenHH, ToaDo, MaLoai, TenLoai FROM dbo.BC_VITRIHANGHOA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaHH" DataSetColumn="MaHH" />
+              <Mapping SourceColumn="TenHH" DataSetColumn="TenHH" />
+              <Mapping SourceColumn="ToaDo" DataSetColumn="ToaDo" />
+              <Mapping SourceColumn="MaLoai" DataSetColumn="MaLoai" />
+              <Mapping SourceColumn="TenLoai" DataSetColumn="TenLoai" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_VITRI_HANGHOA" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DS_VITRI_HANGHOA" msprop:Generator_UserDSName="DS_VITRI_HANGHOA">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BC_VITRIHANGHOA" msprop:Generator_TableClassName="BC_VITRIHANGHOADataTable" msprop:Generator_TableVarName="tableBC_VITRIHANGHOA" msprop:Generator_RowChangedName="BC_VITRIHANGHOARowChanged" msprop:Generator_TablePropName="BC_VITRIHANGHOA" msprop:Generator_RowDeletingName="BC_VITRIHANGHOARowDeleting" msprop:Generator_RowChangingName="BC_VITRIHANGHOARowChanging" msprop:Generator_RowEvHandlerName="BC_VITRIHANGHOARowChangeEventHandler" msprop:Generator_RowDeletedName="BC_VITRIHANGHOARowDeleted" msprop:Generator_RowClassName="BC_VITRIHANGHOARow" msprop:Generator_UserTableName="BC_VITRIHANGHOA" msprop:Generator_RowEvArgName="BC_VITRIHANGHOARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaHH" msprop:Generator_ColumnVarNameInTable="columnMaHH" msprop:Generator_ColumnPropNameInRow="MaHH" msprop:Generator_ColumnPropNameInTable="MaHHColumn" msprop:Generator_UserColumnName="MaHH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenHH" msprop:Generator_ColumnVarNameInTable="columnTenHH" msprop:Generator_ColumnPropNameInRow="TenHH" msprop:Generator_ColumnPropNameInTable="TenHHColumn" msprop:Generator_UserColumnName="TenHH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ToaDo" msprop:Generator_ColumnVarNameInTable="columnToaDo" msprop:Generator_ColumnPropNameInRow="ToaDo" msprop:Generator_ColumnPropNameInTable="ToaDoColumn" msprop:Generator_UserColumnName="ToaDo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaLoai" msprop:Generator_ColumnVarNameInTable="columnMaLoai" msprop:Generator_ColumnPropNameInRow="MaLoai" msprop:Generator_ColumnPropNameInTable="MaLoaiColumn" msprop:Generator_UserColumnName="MaLoai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenLoai" msprop:Generator_ColumnVarNameInTable="columnTenLoai" msprop:Generator_ColumnPropNameInRow="TenLoai" msprop:Generator_ColumnPropNameInTable="TenLoaiColumn" msprop:Generator_UserColumnName="TenLoai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
