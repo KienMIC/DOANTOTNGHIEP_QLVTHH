@@ -63,6 +63,66 @@ namespace DoAn1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap depositphotos_54212357_stock_illustration_distribution_warehouse {
+            get {
+                object obj = ResourceManager.GetObject("depositphotos_54212357-stock-illustration-distribution-warehouse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap depositphotos_54212357_stock_illustration_distribution_warehouse1 {
+            get {
+                object obj = ResourceManager.GetObject("depositphotos_54212357-stock-illustration-distribution-warehouse1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KKHTEAM_LOGO {
+            get {
+                object obj = ResourceManager.GetObject("KKHTEAM_LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KKHTEAM_LOGO1 {
+            get {
+                object obj = ResourceManager.GetObject("KKHTEAM_LOGO1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KKHTEAM_LOGO1_CB {
+            get {
+                object obj = ResourceManager.GetObject("KKHTEAM_LOGO1_CB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouse_2 {
+            get {
+                object obj = ResourceManager.GetObject("warehouse-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Warehouse_Background {
             get {
                 object obj = ResourceManager.GetObject("Warehouse Background", resourceCulture);

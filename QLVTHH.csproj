@@ -153,12 +153,6 @@
     <Compile Include="Baocao\Baocaothongkevitri\FrmThongkehanghoataicacvitri.Designer.cs">
       <DependentUpon>FrmThongkehanghoataicacvitri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Baocao\Baocaothongkevitri\FrmThongketrangthaivitri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Baocao\Baocaothongkevitri\FrmThongketrangthaivitri.Designer.cs">
-      <DependentUpon>FrmThongketrangthaivitri.cs</DependentUpon>
-    </Compile>
     <Compile Include="BCHH_THEOKH_PARA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,6 +192,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_VITRI_HANGHOA_LOAI_PARA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
@@ -477,10 +477,10 @@
     <EmbeddedResource Include="Baocao\Baocaothongkevitri\FrmThongkehanghoataicacvitri.resx">
       <DependentUpon>FrmThongkehanghoataicacvitri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Baocao\Baocaothongkevitri\FrmThongketrangthaivitri.resx">
-      <DependentUpon>FrmThongketrangthaivitri.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Baocao\Baocaothongkevitri\rpThongKeHH_VT.rdlc" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Release\DoAn1.FrmDMkhachhang.resources" />
     <EmbeddedResource Include="obj\Release\DoAn1.FrmDMloaihanghoa.resources" />
     <EmbeddedResource Include="obj\Release\DoAn1.FrmDMnhanvien.resources" />
@@ -746,7 +746,12 @@
     <Content Include="bin\Release\DoAn1.pdb" />
     <Content Include="bin\Release\MdiTabControl.dll" />
     <Content Include="bin\Release\System.Windows.Forms.Ribbon.dll" />
+    <None Include="warehouse-2.jpg" />
+    <None Include="depositphotos_54212357-stock-illustration-distribution-warehouse.jpg" />
     <Content Include="iconfinder-warehouse-3992927_112594.ico" />
+    <None Include="Image\KKHTEAM_LOGO.PNG" />
+    <None Include="Image\KKHTEAM_LOGO1.PNG" />
+    <None Include="Image\KKHTEAM_LOGO1_CB.png" />
     <Content Include="obj\Release\DoAn1.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Release\DoAn1.exe" />
     <Content Include="obj\Release\DoAn1.pdb" />

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DoAn1.Baocao.Baocaothongkevitri
+namespace DoAn1
 {
-    public partial class FrmThongketrangthaivitri : Form
+    public partial class frmAbout : Form
     {
-        public FrmThongketrangthaivitri()
+        public frmAbout()
         {
             InitializeComponent();
         }

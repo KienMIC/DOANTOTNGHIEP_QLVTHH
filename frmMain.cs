@@ -233,19 +233,6 @@ namespace DoAn1
             }
         }
 
-        private void rbtnThongKeTTViTri_Click(object sender, EventArgs e)
-        {
-            f1 = (Baocao.Baocaothongkevitri.FrmThongketrangthaivitri)Application.OpenForms["FrmThongketrangthaivitri"];
-            if (f1 == null)
-            {
-                f1 = new Baocao.Baocaothongkevitri.FrmThongketrangthaivitri();
-                tcMain.TabPages.Add(f1);
-            }
-            else
-            {
-                tcMain.TabPages[f1].Select();
-            }
-        }
 
         private void rbtnHH_VT_Click(object sender, EventArgs e)
         {
@@ -260,12 +247,18 @@ namespace DoAn1
                 tcMain.TabPages[f1].Select();
             }
         }
-
+        
         private void rbtnDangXuat_Click(object sender, EventArgs e)
         {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i].Name != "FrmDangnhap")
+                    Application.OpenForms[i].Close();
+            }
             this.Hide();
             f1 = new FrmDangnhap();
             f1.ShowDialog();
+            
         }
 
         private void rbLichSuViTri_Click(object sender, EventArgs e)
@@ -275,6 +268,25 @@ namespace DoAn1
             if (f1 == null)
             {
                 f1 = new Quanlyvitrihanghoa.frmLichSuViTri();
+                tcMain.TabPages.Add(f1);
+            }
+            else
+            {
+                tcMain.TabPages[f1].Select();
+            }
+        }
+
+        private void rbAbout_ActiveChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rbtnVeChungToi_Click(object sender, EventArgs e)
+        {
+            f1 = (frmAbout)Application.OpenForms["frmAbout"];
+            if (f1 == null)
+            {
+                f1 = new frmAbout();
                 tcMain.TabPages.Add(f1);
             }
             else
