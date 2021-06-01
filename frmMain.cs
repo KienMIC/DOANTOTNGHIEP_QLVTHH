@@ -264,10 +264,8 @@ namespace DoAn1
         private void rbtnDangXuat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.Close();
             f1 = new FrmDangnhap();
             f1.ShowDialog();
-            this.Close();
         }
 
         private void rbLichSuViTri_Click(object sender, EventArgs e)
