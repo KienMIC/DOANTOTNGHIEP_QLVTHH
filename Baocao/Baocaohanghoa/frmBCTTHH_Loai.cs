@@ -21,7 +21,7 @@ namespace DoAn1.Baocao.Baocaohanghoa
         {
             this.sp_viewHHTHEOLOAITableAdapter.Fill(this.bCHH_THEOLOAI_PARA.sp_viewHHTHEOLOAI, frmBaoCaoThongTinHH.MaLoai);
             this.rvBCHH_THEOLOAI.RefreshReport();
-            rvBCHH_THEOLOAI.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            //rvBCHH_THEOLOAI.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
         }
     }
 }

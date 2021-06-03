@@ -31,7 +31,6 @@ namespace DoAn1
             {
                 rbtnQuanLyTaiKhoan.Visible = false;
                 rbHangNhap.Visible = false;
-                rbHangXuat.Visible = false;
             }
         }
 
@@ -148,19 +147,6 @@ namespace DoAn1
             }
         }
 
-        private void rbtnPhieuXuat_Click(object sender, EventArgs e)
-        {
-            f1 = (Quanlyhangxuat.frmPhieuXuat)Application.OpenForms["frmPhieuXuat"];
-            if (f1 == null)
-            {
-                f1 = new Quanlyhangxuat.frmPhieuXuat();
-                tcMain.TabPages.Add(f1);
-            }
-            else
-            {
-                tcMain.TabPages[f1].Select();
-            }
-        }
 
         private void rbtnSaoLuuDuLieu_Click(object sender, EventArgs e)
         {
@@ -275,18 +261,26 @@ namespace DoAn1
                 tcMain.TabPages[f1].Select();
             }
         }
-
-        private void rbAbout_ActiveChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void rbtnVeChungToi_Click(object sender, EventArgs e)
         {
             f1 = (frmAbout)Application.OpenForms["frmAbout"];
             if (f1 == null)
             {
                 f1 = new frmAbout();
+                tcMain.TabPages.Add(f1);
+            }
+            else
+            {
+                tcMain.TabPages[f1].Select();
+            }
+        }
+
+        private void rbtnLapPX_Click(object sender, EventArgs e)
+        {
+            f1 = (Quanlyhangxuat.frmPhieuXuat)Application.OpenForms["frmPhieuXuat"];
+            if (f1 == null)
+            {
+                f1 = new Quanlyhangxuat.frmPhieuXuat();
                 tcMain.TabPages.Add(f1);
             }
             else

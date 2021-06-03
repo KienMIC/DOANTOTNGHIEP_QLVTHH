@@ -74,11 +74,11 @@ namespace DoAn1.Quanlyhethong
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(114, 40);
+            this.label7.Location = new System.Drawing.Point(33, 35);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 29);
+            this.label7.Size = new System.Drawing.Size(358, 29);
             this.label7.TabIndex = 31;
-            this.label7.Text = "SỬA TÀI KHOẢN";
+            this.label7.Text = "SỬA THÔNG TIN TÀI KHOẢN";
             // 
             // label3
             // 
@@ -161,7 +161,7 @@ namespace DoAn1.Quanlyhethong
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Name = "frmSuaTaiKhoan";
-            this.Text = "frmSuaTaiKhoan";
+            this.Text = "Sửa thông tin tài khoản";
             this.Load += new System.EventHandler(this.frmSuaTaiKhoan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

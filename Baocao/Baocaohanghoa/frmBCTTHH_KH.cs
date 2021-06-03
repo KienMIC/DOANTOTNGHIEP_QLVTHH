@@ -21,7 +21,7 @@ namespace DoAn1.Baocao.Baocaohanghoa
         {
             this.sp_viewHHTHEOKHTableAdapter.Fill(this.bCHH_THEOKH_PARA.sp_viewHHTHEOKH, frmBaoCaoThongTinHH.MaKH);
             this.rvBCHH_KHACHHANG.RefreshReport();
-            rvBCHH_KHACHHANG.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            //rvBCHH_KHACHHANG.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
         }
     }
 }

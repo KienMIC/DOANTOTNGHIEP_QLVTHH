@@ -23,7 +23,7 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.bC_HANGHOATableAdapter.Fill(this.dS_HANGHOA.BC_HANGHOA);
 
             this.reportViewer1.RefreshReport();
-            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            //reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace DoAn1.Baocao.Baocaothongkevitri
         {
             this.sp_viewVTHHTHEOLOAITableAdapter.Fill(this.dS_VITRI_HANGHOA_LOAI_PARA.sp_viewVTHHTHEOLOAI, FrmThongkehanghoataicacvitri.MaLoai);
             this.rvHH_VT_LOAI.RefreshReport();
-            rvHH_VT_LOAI.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            //rvHH_VT_LOAI.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.bC_HANGNHAPTableAdapter.Fill(this.qLVTHHDataSet.BC_HANGNHAP);
 
             this.rvBCHNAll.RefreshReport();
-            rvBCHNAll.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            //rvBCHNAll.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
         }
     }
 }

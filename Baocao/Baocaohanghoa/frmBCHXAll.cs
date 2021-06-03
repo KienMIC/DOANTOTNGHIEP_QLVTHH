@@ -22,7 +22,7 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // TODO: This line of code loads data into the 'dS_BAOCAOPHIEUXUAT.BC_HANGXUAT' table. You can move, or remove it, as needed.
             this.bC_HANGXUATTableAdapter.Fill(this.dS_BAOCAOPHIEUXUAT.BC_HANGXUAT);
             rvBCHXAll.RefreshReport();
-            rvBCHXAll.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            //rvBCHXAll.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
 
         }
     }
