@@ -31,13 +31,23 @@ namespace DoAn1.Baocao.Baocaothongkevitri
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvHH_VT_LOAI = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_VITRI_HANGHOA_LOAI_PARA = new DoAn1.DS_VITRI_HANGHOA_LOAI_PARA();
             this.spviewVTHHTHEOLOAIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_VITRI_HANGHOA_LOAI_PARA = new DoAn1.DS_VITRI_HANGHOA_LOAI_PARA();
+            this.rvHH_VT_LOAI = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_viewVTHHTHEOLOAITableAdapter = new DoAn1.DS_VITRI_HANGHOA_LOAI_PARATableAdapters.sp_viewVTHHTHEOLOAITableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_VITRI_HANGHOA_LOAI_PARA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spviewVTHHTHEOLOAIBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_VITRI_HANGHOA_LOAI_PARA)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spviewVTHHTHEOLOAIBindingSource
+            // 
+            this.spviewVTHHTHEOLOAIBindingSource.DataMember = "sp_viewVTHHTHEOLOAI";
+            this.spviewVTHHTHEOLOAIBindingSource.DataSource = this.dS_VITRI_HANGHOA_LOAI_PARA;
+            // 
+            // dS_VITRI_HANGHOA_LOAI_PARA
+            // 
+            this.dS_VITRI_HANGHOA_LOAI_PARA.DataSetName = "DS_VITRI_HANGHOA_LOAI_PARA";
+            this.dS_VITRI_HANGHOA_LOAI_PARA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rvHH_VT_LOAI
             // 
@@ -48,21 +58,11 @@ namespace DoAn1.Baocao.Baocaothongkevitri
             reportDataSource1.Value = this.spviewVTHHTHEOLOAIBindingSource;
             this.rvHH_VT_LOAI.LocalReport.DataSources.Add(reportDataSource1);
             this.rvHH_VT_LOAI.LocalReport.ReportEmbeddedResource = "DoAn1.Baocao.Baocaothongkevitri.rpThongKeHH_VT.rdlc";
-            this.rvHH_VT_LOAI.Location = new System.Drawing.Point(13, -1);
+            this.rvHH_VT_LOAI.Location = new System.Drawing.Point(12, 12);
             this.rvHH_VT_LOAI.Name = "rvHH_VT_LOAI";
             this.rvHH_VT_LOAI.ServerReport.BearerToken = null;
-            this.rvHH_VT_LOAI.Size = new System.Drawing.Size(775, 439);
+            this.rvHH_VT_LOAI.Size = new System.Drawing.Size(775, 396);
             this.rvHH_VT_LOAI.TabIndex = 0;
-            // 
-            // dS_VITRI_HANGHOA_LOAI_PARA
-            // 
-            this.dS_VITRI_HANGHOA_LOAI_PARA.DataSetName = "DS_VITRI_HANGHOA_LOAI_PARA";
-            this.dS_VITRI_HANGHOA_LOAI_PARA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spviewVTHHTHEOLOAIBindingSource
-            // 
-            this.spviewVTHHTHEOLOAIBindingSource.DataMember = "sp_viewVTHHTHEOLOAI";
-            this.spviewVTHHTHEOLOAIBindingSource.DataSource = this.dS_VITRI_HANGHOA_LOAI_PARA;
             // 
             // sp_viewVTHHTHEOLOAITableAdapter
             // 
@@ -72,14 +72,15 @@ namespace DoAn1.Baocao.Baocaothongkevitri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rvHH_VT_LOAI);
             this.Name = "frmHH_VT_LOAI";
-            this.Text = "Xem báo cáo";
+            this.Text = "XEM BÁO CÁO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmHH_VT_LOAI_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_VITRI_HANGHOA_LOAI_PARA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spviewVTHHTHEOLOAIBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_VITRI_HANGHOA_LOAI_PARA)).EndInit();
             this.ResumeLayout(false);
 
         }

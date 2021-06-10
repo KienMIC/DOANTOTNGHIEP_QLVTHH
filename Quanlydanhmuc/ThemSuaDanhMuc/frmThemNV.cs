@@ -47,5 +47,10 @@ namespace DoAn1.Quanlydanhmuc
             (System.Windows.Forms.Application.OpenForms["FrmDMnhanvien"] as FrmDMnhanvien).taiDuLieu();
             this.Close();
         }
+
+        private void frmThemNV_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

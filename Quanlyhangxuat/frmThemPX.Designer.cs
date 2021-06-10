@@ -29,15 +29,16 @@ namespace DoAn1.Quanlyhangxuat
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemPX));
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaPX = new System.Windows.Forms.TextBox();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // cbNhanVien
@@ -47,26 +48,6 @@ namespace DoAn1.Quanlyhangxuat
             this.cbNhanVien.Name = "cbNhanVien";
             this.cbNhanVien.Size = new System.Drawing.Size(235, 21);
             this.cbNhanVien.TabIndex = 58;
-            // 
-            // btnDong
-            // 
-            this.btnDong.Location = new System.Drawing.Point(317, 232);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(89, 54);
-            this.btnDong.TabIndex = 56;
-            this.btnDong.Text = "ĐÓNG";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(19, 232);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(89, 54);
-            this.btnLuu.TabIndex = 57;
-            this.btnLuu.Text = "LƯU";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label7
             // 
@@ -125,15 +106,40 @@ namespace DoAn1.Quanlyhangxuat
             this.dtpNgayLap.Size = new System.Drawing.Size(235, 20);
             this.dtpNgayLap.TabIndex = 59;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.Appearance.Options.UseFont = true;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(46, 239);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(98, 40);
+            this.btnLuu.TabIndex = 75;
+            this.btnLuu.Text = "LƯU";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnDong
+            // 
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDong.Appearance.Options.UseFont = true;
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.Location = new System.Drawing.Point(286, 239);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(98, 40);
+            this.btnDong.TabIndex = 76;
+            this.btnDong.Text = "ĐÓNG";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
             // frmThemPX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(436, 328);
-            this.Controls.Add(this.dtpNgayLap);
-            this.Controls.Add(this.cbNhanVien);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.dtpNgayLap);
+            this.Controls.Add(this.cbNhanVien);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -141,7 +147,7 @@ namespace DoAn1.Quanlyhangxuat
             this.Controls.Add(this.txtMaPX);
             this.Name = "frmThemPX";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmThemPX";
+            this.Text = "LẬP PHIẾU XUẤT";
             this.Load += new System.EventHandler(this.frmThemPX_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,13 +157,13 @@ namespace DoAn1.Quanlyhangxuat
         #endregion
 
         private System.Windows.Forms.ComboBox cbNhanVien;
-        private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaPX;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraEditors.SimpleButton btnDong;
     }
 }

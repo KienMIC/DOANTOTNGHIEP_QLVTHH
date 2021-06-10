@@ -44,7 +44,7 @@ namespace DoAn1.Quanlyhangxuat
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có thực sự muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có thực sự muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 sql = "sp_xoaCTPX '" + MaCTPX + "'";
@@ -72,7 +72,7 @@ namespace DoAn1.Quanlyhangxuat
                 SoLuong = (int)dgvCTPX.CurrentRow.Cells[4].Value;
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.ToString());
+                DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString());
             }
 
         }

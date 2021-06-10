@@ -29,25 +29,29 @@ namespace DoAn1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSaoluudulieu));
             this.txtFolder = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnChange = new System.Windows.Forms.Button();
-            this.btnSaoLuu = new System.Windows.Forms.Button();
-            this.btnKhoiPhuc = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pbBR = new System.Windows.Forms.ProgressBar();
-            this.btnDong = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSaoLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKhoiPhuc = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChange = new DevExpress.XtraEditors.SimpleButton();
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFolder
             // 
-            this.txtFolder.Location = new System.Drawing.Point(216, 61);
+            this.txtFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.txtFolder.Location = new System.Drawing.Point(196, 61);
             this.txtFolder.Name = "txtFolder";
             this.txtFolder.ReadOnly = true;
-            this.txtFolder.Size = new System.Drawing.Size(361, 20);
+            this.txtFolder.Size = new System.Drawing.Size(347, 20);
             this.txtFolder.TabIndex = 0;
             // 
             // label1
@@ -58,36 +62,6 @@ namespace DoAn1
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Thư mục sao lưu";
-            // 
-            // btnChange
-            // 
-            this.btnChange.Location = new System.Drawing.Point(7, 26);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(111, 47);
-            this.btnChange.TabIndex = 2;
-            this.btnChange.Text = "Chọn đường dẫn thư mục sao lưu";
-            this.btnChange.UseVisualStyleBackColor = true;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
-            // 
-            // btnSaoLuu
-            // 
-            this.btnSaoLuu.Location = new System.Drawing.Point(7, 87);
-            this.btnSaoLuu.Name = "btnSaoLuu";
-            this.btnSaoLuu.Size = new System.Drawing.Size(111, 40);
-            this.btnSaoLuu.TabIndex = 2;
-            this.btnSaoLuu.Text = "Sao lưu";
-            this.btnSaoLuu.UseVisualStyleBackColor = true;
-            this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
-            // 
-            // btnKhoiPhuc
-            // 
-            this.btnKhoiPhuc.Location = new System.Drawing.Point(148, 26);
-            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
-            this.btnKhoiPhuc.Size = new System.Drawing.Size(111, 40);
-            this.btnKhoiPhuc.TabIndex = 2;
-            this.btnKhoiPhuc.Text = "Khôi phục";
-            this.btnKhoiPhuc.UseVisualStyleBackColor = true;
-            this.btnKhoiPhuc.Click += new System.EventHandler(this.btnKhoiPhuc_Click);
             // 
             // label2
             // 
@@ -100,33 +74,75 @@ namespace DoAn1
             // 
             // pbBR
             // 
-            this.pbBR.Location = new System.Drawing.Point(216, 108);
+            this.pbBR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbBR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.pbBR.Location = new System.Drawing.Point(196, 110);
             this.pbBR.Name = "pbBR";
-            this.pbBR.Size = new System.Drawing.Size(361, 35);
+            this.pbBR.Size = new System.Drawing.Size(347, 35);
             this.pbBR.TabIndex = 3;
-            // 
-            // btnDong
-            // 
-            this.btnDong.Location = new System.Drawing.Point(148, 87);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(111, 40);
-            this.btnDong.TabIndex = 2;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnDong);
-            this.groupBox1.Controls.Add(this.btnChange);
             this.groupBox1.Controls.Add(this.btnSaoLuu);
             this.groupBox1.Controls.Add(this.btnKhoiPhuc);
-            this.groupBox1.Location = new System.Drawing.Point(610, 25);
+            this.groupBox1.Controls.Add(this.btnChange);
+            this.groupBox1.Location = new System.Drawing.Point(562, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(271, 143);
+            this.groupBox1.Size = new System.Drawing.Size(307, 143);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
+            // 
+            // btnDong
+            // 
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDong.Appearance.Options.UseFont = true;
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.Location = new System.Drawing.Point(187, 85);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(108, 45);
+            this.btnDong.TabIndex = 58;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
+            // btnSaoLuu
+            // 
+            this.btnSaoLuu.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaoLuu.Appearance.Options.UseFont = true;
+            this.btnSaoLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSaoLuu.ImageOptions.Image")));
+            this.btnSaoLuu.Location = new System.Drawing.Point(37, 85);
+            this.btnSaoLuu.Name = "btnSaoLuu";
+            this.btnSaoLuu.Size = new System.Drawing.Size(108, 45);
+            this.btnSaoLuu.TabIndex = 57;
+            this.btnSaoLuu.Text = "Sao lưu";
+            this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
+            // 
+            // btnKhoiPhuc
+            // 
+            this.btnKhoiPhuc.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhoiPhuc.Appearance.Options.UseFont = true;
+            this.btnKhoiPhuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKhoiPhuc.ImageOptions.Image")));
+            this.btnKhoiPhuc.Location = new System.Drawing.Point(187, 24);
+            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
+            this.btnKhoiPhuc.Size = new System.Drawing.Size(108, 45);
+            this.btnKhoiPhuc.TabIndex = 56;
+            this.btnKhoiPhuc.Text = "Khôi phục";
+            this.btnKhoiPhuc.Click += new System.EventHandler(this.btnKhoiPhuc_Click);
+            // 
+            // btnChange
+            // 
+            this.btnChange.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.Appearance.Options.UseFont = true;
+            this.btnChange.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChange.ImageOptions.Image")));
+            this.btnChange.Location = new System.Drawing.Point(15, 24);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(149, 45);
+            this.btnChange.TabIndex = 55;
+            this.btnChange.Text = "Chọn đường dẫn \r\nthư mục sao lưu";
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // bgWorker
             // 
@@ -137,6 +153,7 @@ namespace DoAn1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(893, 194);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pbBR);
@@ -144,7 +161,7 @@ namespace DoAn1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFolder);
             this.Name = "FrmSaoluudulieu";
-            this.Text = "Sao lưu & Khôi phục CSDL";
+            this.Text = "SAO LƯU & KHÔI PHỤC CSDL";
             this.Load += new System.EventHandler(this.FrmSaoluudulieu_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -156,13 +173,13 @@ namespace DoAn1
 
         private System.Windows.Forms.TextBox txtFolder;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnChange;
-        private System.Windows.Forms.Button btnSaoLuu;
-        private System.Windows.Forms.Button btnKhoiPhuc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar pbBR;
-        private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker bgWorker;
+        private DevExpress.XtraEditors.SimpleButton btnDong;
+        private DevExpress.XtraEditors.SimpleButton btnSaoLuu;
+        private DevExpress.XtraEditors.SimpleButton btnKhoiPhuc;
+        private DevExpress.XtraEditors.SimpleButton btnChange;
     }
 }

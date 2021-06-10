@@ -17,7 +17,7 @@ namespace DoAn1
         {
             InitializeComponent();
         }
-        public string MaNhom = FrmDangnhap.MaNhom;
+        public string MaNhom = Quanlyhethong.XtraFormDangNhap.MaNhom;
         public Form f1;
 
         private void Trangchu_Load(object sender, EventArgs e)
@@ -110,21 +110,6 @@ namespace DoAn1
             if (f1 == null)
             {
                 f1 = new Quanlyhangnhap.frmPhieuNhap();
-                tcMain.TabPages.Add(f1);
-            }
-            else
-            {
-                tcMain.TabPages[f1].Select();
-            }
-        }
-
-
-        private void rbtnDangNhap_Click(object sender, EventArgs e)
-        {
-            f1 = (FrmDangnhap)Application.OpenForms["FrmDangnhap"];
-            if (f1 == null)
-            {
-                f1 = new FrmDangnhap();
                 tcMain.TabPages.Add(f1);
             }
             else
@@ -238,11 +223,11 @@ namespace DoAn1
         {
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
-                if (Application.OpenForms[i].Name != "FrmDangnhap")
+                if (Application.OpenForms[i].Name != "XtraFormDangNhap")
                     Application.OpenForms[i].Close();
             }
             this.Hide();
-            f1 = new FrmDangnhap();
+            f1 = new Quanlyhethong.XtraFormDangNhap();
             f1.ShowDialog();
             
         }

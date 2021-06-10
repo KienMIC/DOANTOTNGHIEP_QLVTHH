@@ -31,13 +31,24 @@ namespace DoAn1.Baocao.Baocaohanghoa
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvBCHNDate = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.bCHX_PARA = new DoAn1.BCHX_PARA();
             this.spviewBCHXBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bCHX_PARA = new DoAn1.BCHX_PARA();
+            this.rvBCHNDate = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_viewBCHXTableAdapter = new DoAn1.BCHX_PARATableAdapters.sp_viewBCHXTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.bCHX_PARA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spviewBCHXBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bCHX_PARA)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spviewBCHXBindingSource
+            // 
+            this.spviewBCHXBindingSource.DataMember = "sp_viewBCHX";
+            this.spviewBCHXBindingSource.DataSource = this.bCHX_PARA;
+            // 
+            // bCHX_PARA
+            // 
+            this.bCHX_PARA.DataSetName = "BCHX_PARA";
+            this.bCHX_PARA.EnforceConstraints = false;
+            this.bCHX_PARA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rvBCHNDate
             // 
@@ -51,19 +62,8 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.rvBCHNDate.Location = new System.Drawing.Point(13, 13);
             this.rvBCHNDate.Name = "rvBCHNDate";
             this.rvBCHNDate.ServerReport.BearerToken = null;
-            this.rvBCHNDate.Size = new System.Drawing.Size(775, 425);
+            this.rvBCHNDate.Size = new System.Drawing.Size(775, 386);
             this.rvBCHNDate.TabIndex = 1;
-            // 
-            // bCHX_PARA
-            // 
-            this.bCHX_PARA.DataSetName = "BCHX_PARA";
-            this.bCHX_PARA.EnforceConstraints = false;
-            this.bCHX_PARA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spviewBCHXBindingSource
-            // 
-            this.spviewBCHXBindingSource.DataMember = "sp_viewBCHX";
-            this.spviewBCHXBindingSource.DataSource = this.bCHX_PARA;
             // 
             // sp_viewBCHXTableAdapter
             // 
@@ -73,14 +73,15 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rvBCHNDate);
             this.Name = "frmBCHXDate";
-            this.Text = "Xem báo cáo";
+            this.Text = "XEM BÁO CÁO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBCHXDate_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bCHX_PARA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spviewBCHXBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bCHX_PARA)).EndInit();
             this.ResumeLayout(false);
 
         }

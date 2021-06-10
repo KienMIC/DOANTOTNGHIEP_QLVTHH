@@ -44,7 +44,7 @@ namespace DoAn1.SQLClass
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString());
                 return false;
                 
             }

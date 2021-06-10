@@ -29,9 +29,10 @@ namespace DoAn1.Baocao.Baocaohanghoa
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaocaohangxuat));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLapBC = new DevExpress.XtraEditors.SimpleButton();
             this.rbDateBC = new System.Windows.Forms.RadioButton();
-            this.btnLapBC = new System.Windows.Forms.Button();
             this.rbFullBC = new System.Windows.Forms.RadioButton();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,8 +43,8 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbDateBC);
             this.groupBox1.Controls.Add(this.btnLapBC);
+            this.groupBox1.Controls.Add(this.rbDateBC);
             this.groupBox1.Controls.Add(this.rbFullBC);
             this.groupBox1.Controls.Add(this.dtpDenNgay);
             this.groupBox1.Controls.Add(this.label2);
@@ -56,6 +57,18 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lập báo cáo hàng xuất";
             // 
+            // btnLapBC
+            // 
+            this.btnLapBC.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLapBC.Appearance.Options.UseFont = true;
+            this.btnLapBC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLapBC.ImageOptions.Image")));
+            this.btnLapBC.Location = new System.Drawing.Point(150, 153);
+            this.btnLapBC.Name = "btnLapBC";
+            this.btnLapBC.Size = new System.Drawing.Size(124, 40);
+            this.btnLapBC.TabIndex = 6;
+            this.btnLapBC.Text = "Lập báo cáo";
+            this.btnLapBC.Click += new System.EventHandler(this.btnLapBC_Click);
+            // 
             // rbDateBC
             // 
             this.rbDateBC.AutoSize = true;
@@ -66,17 +79,6 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.rbDateBC.TabStop = true;
             this.rbDateBC.Text = "Báo cáo trong kỳ";
             this.rbDateBC.UseVisualStyleBackColor = true;
-            // 
-            // btnLapBC
-            // 
-            this.btnLapBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapBC.Location = new System.Drawing.Point(150, 153);
-            this.btnLapBC.Name = "btnLapBC";
-            this.btnLapBC.Size = new System.Drawing.Size(111, 40);
-            this.btnLapBC.TabIndex = 2;
-            this.btnLapBC.Text = "Lập báo cáo";
-            this.btnLapBC.UseVisualStyleBackColor = true;
-            this.btnLapBC.Click += new System.EventHandler(this.btnLapBC_Click);
             // 
             // rbFullBC
             // 
@@ -131,11 +133,12 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(444, 236);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmBaocaohangxuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Báo cáo hàng xuất";
+            this.Text = "BÁO CÁO HÀNG XUẤT";
             this.Load += new System.EventHandler(this.FrmBaocaohangxuat_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -147,11 +150,11 @@ namespace DoAn1.Baocao.Baocaohanghoa
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbDateBC;
-        private System.Windows.Forms.Button btnLapBC;
         private System.Windows.Forms.RadioButton rbFullBC;
         private System.Windows.Forms.DateTimePicker dtpDenNgay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpTuNgay;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btnLapBC;
     }
 }

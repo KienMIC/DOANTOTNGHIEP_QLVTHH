@@ -31,13 +31,24 @@ namespace DoAn1.Baocao.Baocaohanghoa
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvBCHNAll = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.qLVTHHDataSet = new DoAn1.QLVTHHDataSet();
             this.bCHANGNHAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVTHHDataSet = new DoAn1.QLVTHHDataSet();
+            this.rvBCHNAll = new Microsoft.Reporting.WinForms.ReportViewer();
             this.bC_HANGNHAPTableAdapter = new DoAn1.QLVTHHDataSetTableAdapters.BC_HANGNHAPTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVTHHDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCHANGNHAPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTHHDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bCHANGNHAPBindingSource
+            // 
+            this.bCHANGNHAPBindingSource.DataMember = "BC_HANGNHAP";
+            this.bCHANGNHAPBindingSource.DataSource = this.qLVTHHDataSet;
+            // 
+            // qLVTHHDataSet
+            // 
+            this.qLVTHHDataSet.DataSetName = "QLVTHHDataSet";
+            this.qLVTHHDataSet.EnforceConstraints = false;
+            this.qLVTHHDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rvBCHNAll
             // 
@@ -51,19 +62,8 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.rvBCHNAll.Location = new System.Drawing.Point(13, 13);
             this.rvBCHNAll.Name = "rvBCHNAll";
             this.rvBCHNAll.ServerReport.BearerToken = null;
-            this.rvBCHNAll.Size = new System.Drawing.Size(775, 425);
+            this.rvBCHNAll.Size = new System.Drawing.Size(775, 396);
             this.rvBCHNAll.TabIndex = 0;
-            // 
-            // qLVTHHDataSet
-            // 
-            this.qLVTHHDataSet.DataSetName = "QLVTHHDataSet";
-            this.qLVTHHDataSet.EnforceConstraints = false;
-            this.qLVTHHDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bCHANGNHAPBindingSource
-            // 
-            this.bCHANGNHAPBindingSource.DataMember = "BC_HANGNHAP";
-            this.bCHANGNHAPBindingSource.DataSource = this.qLVTHHDataSet;
             // 
             // bC_HANGNHAPTableAdapter
             // 
@@ -73,14 +73,15 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rvBCHNAll);
             this.Name = "frmBCHNAll";
-            this.Text = "Xem báo cáo";
+            this.Text = "XEM BÁO CÁO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBCHNAll_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qLVTHHDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCHANGNHAPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTHHDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -29,8 +29,9 @@ namespace DoAn1.Baocao.Baocaohanghoa
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLapBC = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoThongTinHH));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLapBC = new DevExpress.XtraEditors.SimpleButton();
             this.cbKhachHang = new System.Windows.Forms.ComboBox();
             this.cbLoaiHang = new System.Windows.Forms.ComboBox();
             this.rbKHBC = new System.Windows.Forms.RadioButton();
@@ -39,24 +40,13 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnLapBC
-            // 
-            this.btnLapBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapBC.Location = new System.Drawing.Point(150, 153);
-            this.btnLapBC.Name = "btnLapBC";
-            this.btnLapBC.Size = new System.Drawing.Size(111, 40);
-            this.btnLapBC.TabIndex = 2;
-            this.btnLapBC.Text = "Lập báo cáo";
-            this.btnLapBC.UseVisualStyleBackColor = true;
-            this.btnLapBC.Click += new System.EventHandler(this.btnLapBC_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLapBC);
             this.groupBox1.Controls.Add(this.cbKhachHang);
             this.groupBox1.Controls.Add(this.cbLoaiHang);
             this.groupBox1.Controls.Add(this.rbKHBC);
             this.groupBox1.Controls.Add(this.rbCatBC);
-            this.groupBox1.Controls.Add(this.btnLapBC);
             this.groupBox1.Controls.Add(this.rbFullBC);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -64,6 +54,18 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lập báo cáo hàng hóa";
+            // 
+            // btnLapBC
+            // 
+            this.btnLapBC.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLapBC.Appearance.Options.UseFont = true;
+            this.btnLapBC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLapBC.ImageOptions.Image")));
+            this.btnLapBC.Location = new System.Drawing.Point(150, 153);
+            this.btnLapBC.Name = "btnLapBC";
+            this.btnLapBC.Size = new System.Drawing.Size(124, 40);
+            this.btnLapBC.TabIndex = 7;
+            this.btnLapBC.Text = "Lập báo cáo";
+            this.btnLapBC.Click += new System.EventHandler(this.btnLapBC_Click);
             // 
             // cbKhachHang
             // 
@@ -118,11 +120,12 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(444, 236);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmBaoCaoThongTinHH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Báo cáo thông tin hàng hóa";
+            this.Text = "BÁO CÁO THÔNG TIN HÀNG HÓA";
             this.Load += new System.EventHandler(this.frmBaoCaoThongTinHH_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -131,13 +134,12 @@ namespace DoAn1.Baocao.Baocaohanghoa
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLapBC;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbCatBC;
         private System.Windows.Forms.RadioButton rbFullBC;
         private System.Windows.Forms.ComboBox cbKhachHang;
         private System.Windows.Forms.ComboBox cbLoaiHang;
         private System.Windows.Forms.RadioButton rbKHBC;
+        private DevExpress.XtraEditors.SimpleButton btnLapBC;
     }
 }

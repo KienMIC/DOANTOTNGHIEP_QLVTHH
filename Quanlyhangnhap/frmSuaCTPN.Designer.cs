@@ -29,11 +29,10 @@ namespace DoAn1.Quanlyhangnhap
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSuaCTPN));
             this.txtSoLuong = new System.Windows.Forms.NumericUpDown();
             this.txtSoKhoi = new System.Windows.Forms.NumericUpDown();
             this.cbHangHoa = new System.Windows.Forms.ComboBox();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,6 +41,8 @@ namespace DoAn1.Quanlyhangnhap
             this.label1 = new System.Windows.Forms.Label();
             this.txtSoXe = new System.Windows.Forms.TextBox();
             this.txtMaCTPN = new System.Windows.Forms.TextBox();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoKhoi)).BeginInit();
             this.SuspendLayout();
@@ -97,26 +98,6 @@ namespace DoAn1.Quanlyhangnhap
             this.cbHangHoa.Name = "cbHangHoa";
             this.cbHangHoa.Size = new System.Drawing.Size(235, 21);
             this.cbHangHoa.TabIndex = 70;
-            // 
-            // btnDong
-            // 
-            this.btnDong.Location = new System.Drawing.Point(345, 332);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(89, 54);
-            this.btnDong.TabIndex = 68;
-            this.btnDong.Text = "ĐÓNG";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(47, 332);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(89, 54);
-            this.btnLuu.TabIndex = 69;
-            this.btnLuu.Text = "LƯU";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label7
             // 
@@ -193,16 +174,41 @@ namespace DoAn1.Quanlyhangnhap
             this.txtMaCTPN.Size = new System.Drawing.Size(235, 20);
             this.txtMaCTPN.TabIndex = 61;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.Appearance.Options.UseFont = true;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(47, 339);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(98, 40);
+            this.btnLuu.TabIndex = 73;
+            this.btnLuu.Text = "LƯU";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnDong
+            // 
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDong.Appearance.Options.UseFont = true;
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.Location = new System.Drawing.Point(322, 339);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(98, 40);
+            this.btnDong.TabIndex = 74;
+            this.btnDong.Text = "ĐÓNG";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
             // frmSuaCTPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(478, 419);
+            this.Controls.Add(this.btnDong);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtSoKhoi);
             this.Controls.Add(this.cbHangHoa);
-            this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -213,7 +219,7 @@ namespace DoAn1.Quanlyhangnhap
             this.Controls.Add(this.txtMaCTPN);
             this.Name = "frmSuaCTPN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmSuaCTPN";
+            this.Text = "SỬA CHI TIẾT PHIẾU NHẬP";
             this.Load += new System.EventHandler(this.frmSuaCTPN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoKhoi)).EndInit();
@@ -227,8 +233,6 @@ namespace DoAn1.Quanlyhangnhap
         private System.Windows.Forms.NumericUpDown txtSoLuong;
         private System.Windows.Forms.NumericUpDown txtSoKhoi;
         private System.Windows.Forms.ComboBox cbHangHoa;
-        private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
@@ -237,5 +241,7 @@ namespace DoAn1.Quanlyhangnhap
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSoXe;
         private System.Windows.Forms.TextBox txtMaCTPN;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraEditors.SimpleButton btnDong;
     }
 }

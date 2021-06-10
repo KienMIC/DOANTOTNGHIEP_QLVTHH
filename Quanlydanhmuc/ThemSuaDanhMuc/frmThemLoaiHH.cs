@@ -37,5 +37,10 @@ namespace DoAn1.Quanlydanhmuc.ThemSuaDanhMuc
             this.Close();
 
         }
+
+        private void frmThemLoaiHH_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

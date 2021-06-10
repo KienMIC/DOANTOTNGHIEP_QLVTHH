@@ -31,13 +31,24 @@ namespace DoAn1.Baocao.Baocaohanghoa
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvBCHXAll = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_BAOCAOPHIEUXUAT = new DoAn1.DS_BAOCAOPHIEUXUAT();
             this.bCHANGXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_BAOCAOPHIEUXUAT = new DoAn1.DS_BAOCAOPHIEUXUAT();
+            this.rvBCHXAll = new Microsoft.Reporting.WinForms.ReportViewer();
             this.bC_HANGXUATTableAdapter = new DoAn1.DS_BAOCAOPHIEUXUATTableAdapters.BC_HANGXUATTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_BAOCAOPHIEUXUAT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCHANGXUATBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_BAOCAOPHIEUXUAT)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bCHANGXUATBindingSource
+            // 
+            this.bCHANGXUATBindingSource.DataMember = "BC_HANGXUAT";
+            this.bCHANGXUATBindingSource.DataSource = this.dS_BAOCAOPHIEUXUAT;
+            // 
+            // dS_BAOCAOPHIEUXUAT
+            // 
+            this.dS_BAOCAOPHIEUXUAT.DataSetName = "DS_BAOCAOPHIEUXUAT";
+            this.dS_BAOCAOPHIEUXUAT.EnforceConstraints = false;
+            this.dS_BAOCAOPHIEUXUAT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rvBCHXAll
             // 
@@ -51,19 +62,8 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.rvBCHXAll.Location = new System.Drawing.Point(13, 13);
             this.rvBCHXAll.Name = "rvBCHXAll";
             this.rvBCHXAll.ServerReport.BearerToken = null;
-            this.rvBCHXAll.Size = new System.Drawing.Size(775, 425);
+            this.rvBCHXAll.Size = new System.Drawing.Size(775, 390);
             this.rvBCHXAll.TabIndex = 1;
-            // 
-            // dS_BAOCAOPHIEUXUAT
-            // 
-            this.dS_BAOCAOPHIEUXUAT.DataSetName = "DS_BAOCAOPHIEUXUAT";
-            this.dS_BAOCAOPHIEUXUAT.EnforceConstraints = false;
-            this.dS_BAOCAOPHIEUXUAT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bCHANGXUATBindingSource
-            // 
-            this.bCHANGXUATBindingSource.DataMember = "BC_HANGXUAT";
-            this.bCHANGXUATBindingSource.DataSource = this.dS_BAOCAOPHIEUXUAT;
             // 
             // bC_HANGXUATTableAdapter
             // 
@@ -73,14 +73,15 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rvBCHXAll);
             this.Name = "frmBCHXAll";
-            this.Text = "Xem báo cáo";
+            this.Text = "XEM BÁO CÁO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBCHXAll_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_BAOCAOPHIEUXUAT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCHANGXUATBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_BAOCAOPHIEUXUAT)).EndInit();
             this.ResumeLayout(false);
 
         }

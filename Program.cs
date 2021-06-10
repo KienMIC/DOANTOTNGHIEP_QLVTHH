@@ -16,8 +16,7 @@ namespace DoAn1
        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDangnhap());
-            //Application.Run(new frmMain());
+            Application.Run(new Quanlyhethong.XtraFormDangNhap());
         }
     }
 }

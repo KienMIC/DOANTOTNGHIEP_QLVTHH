@@ -10,7 +10,7 @@ namespace DoAn1.SQLClass
     class clsKetNoi
     {
         public SqlConnection con = new SqlConnection();
-        string ChuoiKetNoi = "Data Source = Localhost\\sqlexpress" + ";Database=QLVTHH" + ";Integrated Security = True" + ";Connect Timeout=30" + ";User Instance=False";
+        string ChuoiKetNoi = "Data Source = localhost\\sqlexpress" + ";Database=QLVTHH" + ";Integrated Security = True" + ";Connect Timeout=30" + ";User Instance=False";
         public bool KetNoi()
         {
             try

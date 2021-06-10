@@ -61,7 +61,7 @@ namespace DoAn1.Baocao.Baocaohanghoa
             this.reportViewer1.Location = new System.Drawing.Point(13, 13);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(775, 425);
+            this.reportViewer1.Size = new System.Drawing.Size(775, 395);
             this.reportViewer1.TabIndex = 0;
             // 
             // bC_HANGHOATableAdapter
@@ -72,10 +72,11 @@ namespace DoAn1.Baocao.Baocaohanghoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmBaocaoTTHHAll";
-            this.Text = "Xem báo cáo ";
+            this.Text = "XEM BÁO CÁO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBaocaohangton_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bCHANGHOABindingSource)).EndInit();

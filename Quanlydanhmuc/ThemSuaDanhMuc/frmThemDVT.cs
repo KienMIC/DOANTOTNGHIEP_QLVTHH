@@ -36,5 +36,10 @@ namespace DoAn1.Quanlydanhmuc.ThemSuaDanhMuc
             (System.Windows.Forms.Application.OpenForms["FrmDMdonvitinh"] as FrmDMdonvitinh).taiDuLieu();
             this.Close();
         }
+
+        private void frmThemDVT_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

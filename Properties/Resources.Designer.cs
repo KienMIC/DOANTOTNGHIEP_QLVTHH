@@ -63,19 +63,9 @@ namespace DoAn1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap depositphotos_54212357_stock_illustration_distribution_warehouse {
+        internal static System.Drawing.Bitmap iconfinder_warehouse_3992927_112594 {
             get {
-                object obj = ResourceManager.GetObject("depositphotos_54212357-stock-illustration-distribution-warehouse", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap depositphotos_54212357_stock_illustration_distribution_warehouse1 {
-            get {
-                object obj = ResourceManager.GetObject("depositphotos_54212357-stock-illustration-distribution-warehouse1", resourceCulture);
+                object obj = ResourceManager.GetObject("iconfinder-warehouse-3992927_112594", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

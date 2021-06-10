@@ -36,13 +36,7 @@ namespace DoAn1.Quanlyhangxuat
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            MaPX = txtMaPX.Text;
-            NgayLap = dtpNgayLap.Value.ToString("yyyy/MM/dd");
-            MaNV = cbNhanVien.SelectedValue.ToString();
-            sql = "sp_themPX '" + MaPX + "','" + NgayLap + "','" + MaNV + "'";
-            cls.Them_sua_xoa(sql);
-            (System.Windows.Forms.Application.OpenForms["frmPhieuXuat"] as frmPhieuXuat).taiDuLieu();
-            this.Close();
+
         }
 
 

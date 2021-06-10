@@ -29,7 +29,9 @@ namespace DoAn1.Quanlyvitrihanghoa
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLichSuViTri));
             this.dgvLichSu = new System.Windows.Forms.DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,7 +39,7 @@ namespace DoAn1.Quanlyvitrihanghoa
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnReload = new System.Windows.Forms.Button();
+            this.btnReload = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -50,8 +52,10 @@ namespace DoAn1.Quanlyvitrihanghoa
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLichSu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichSu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvLichSu.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column7,
             this.Column1,
             this.Column6,
             this.Column2,
@@ -61,8 +65,14 @@ namespace DoAn1.Quanlyvitrihanghoa
             this.dgvLichSu.Location = new System.Drawing.Point(6, 19);
             this.dgvLichSu.Name = "dgvLichSu";
             this.dgvLichSu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvLichSu.Size = new System.Drawing.Size(891, 404);
+            this.dgvLichSu.Size = new System.Drawing.Size(906, 388);
             this.dgvLichSu.TabIndex = 0;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "HanhDong";
+            this.Column7.HeaderText = "Hành động";
+            this.Column7.Name = "Column7";
             // 
             // Column1
             // 
@@ -108,31 +118,34 @@ namespace DoAn1.Quanlyvitrihanghoa
             this.groupBox1.Controls.Add(this.dgvLichSu);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(903, 429);
+            this.groupBox1.Size = new System.Drawing.Size(918, 413);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "LỊCH SỬ VỊ TRÍ";
+            this.groupBox1.Text = "HÀNH ĐỘNG";
             // 
             // btnReload
             // 
-            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(831, 452);
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnReload.Appearance.Options.UseFont = true;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.Location = new System.Drawing.Point(805, 431);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(100, 39);
-            this.btnReload.TabIndex = 2;
+            this.btnReload.Size = new System.Drawing.Size(103, 40);
+            this.btnReload.TabIndex = 75;
             this.btnReload.Text = "TẢI LẠI";
-            this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // frmLichSuViTri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(943, 503);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmLichSuViTri";
-            this.Text = "Tra cứu lịch sử thay đổi vị trí";
+            this.Text = "TRA CỨU HÀNH ĐỘNG";
             this.Load += new System.EventHandler(this.frmLichSuViTri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -144,7 +157,8 @@ namespace DoAn1.Quanlyvitrihanghoa
 
         private System.Windows.Forms.DataGridView dgvLichSu;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnReload;
+        private DevExpress.XtraEditors.SimpleButton btnReload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

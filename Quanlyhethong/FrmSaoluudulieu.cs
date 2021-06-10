@@ -36,7 +36,7 @@ namespace DoAn1
             {
                 if (txtFolder.Text == string.Empty)
                 {
-                    MessageBox.Show("Vui lòng chọn đường dẫn lưu file sao lưu");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn đường dẫn lưu file sao lưu");
                 }
                 else
                 {
@@ -45,18 +45,18 @@ namespace DoAn1
                     SQLClass.clsCRUD cls = new SQLClass.clsCRUD();
                     if (cls.Them_sua_xoa(sql))
                     {
-                        MessageBox.Show("Sao lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Sao lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Sao lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Sao lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString());
             }
         }
 
@@ -98,17 +98,17 @@ namespace DoAn1
 
                     if(cls.Them_sua_xoa(sqlStmt2) && cls.Them_sua_xoa(sqlStmt3) && cls.Them_sua_xoa(sqlStmt4))
                     {
-                        MessageBox.Show("Khôi phục CSDL thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Khôi phục CSDL thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Khôi phục CSDL thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Khôi phục CSDL thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    
-                    MessageBox.Show(ex.ToString());
+
+                    DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString());
                 }
             }
         }

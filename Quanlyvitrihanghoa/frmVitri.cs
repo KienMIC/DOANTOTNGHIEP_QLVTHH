@@ -16,7 +16,7 @@ namespace DoAn1.Quanlyvitrihanghoa
 {
     public partial class frmVitri : Form
     {
-        public String[] Gvalue = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P" };
+        //public String[] Gvalue = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P" };
         public frmVitri()
         {
             InitializeComponent();
@@ -30,13 +30,32 @@ namespace DoAn1.Quanlyvitrihanghoa
             }
 
         }
-        public int R = 206, G = 246, B = 203;
+        public int R = 206, G = 246, B = 203; //227, 239, 255
         public string color_str = "";
         public string NgayGioHienTai = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
-        public static string MaVT = "null", MaHH = "", IDColor = "", ToaDo = "", ToaDoBanDau = "";
-        public string MaNV = FrmDangnhap.MaNV;
+        public string MaNV = Quanlyhethong.XtraFormDangNhap.MaNV;
+        public string vtBD = "";
+        public string vtKT = "";
+        public string HanhDong = "";
+
+
         clsCRUD cRUD = new clsCRUD();
         public DataTable dataTable = new DataTable();
+        List<String> list_pos = new List<string>();
+
+        String hd = "";
+        String[] headname = {
+            "Mã hàng hóa: " ,
+            "Tên hàng hóa: " ,
+            "Loại hàng hóa: " ,
+            "Đơn vị tính: " ,
+            "Thời gian bắt đầu: " ,
+            "Thời gian kết thúc:" ,
+            "Trạng thái hàng hóa: " ,
+            "Khách hàng: "
+        };
+
+
 
         public void LoadLabel_TableCell(TableLayoutPanel table, String tbname)
         {
@@ -56,9 +75,6 @@ namespace DoAn1.Quanlyvitrihanghoa
                     };
 
                     label.Click += CusClick;
-                    label.DoubleClick += CusDoubleClick;
-                    label.MouseUp += CusRightClick;
-
 
                     table.Controls.Add(label, i, j);
 
@@ -67,10 +83,17 @@ namespace DoAn1.Quanlyvitrihanghoa
 
         }
 
-        //date 22/5/2021
+        //date 6/6/2021
         protected void CusClick(object sender, EventArgs e)
         {
+            //Hiển thị vị trí hiện tại
             String[] arr = ((Label)sender).Name.Split('_');
+
+            cbG.Text = arr[1];
+            cbT.Text = "0" + arr[2];
+            cbN.Text = "00" + arr[3];
+
+            /*
             for (int i = 0; i < Gvalue.Length; i++)
             {
                 if (arr[1] == Gvalue[i]) cbG.SelectedIndex = i;
@@ -82,96 +105,146 @@ namespace DoAn1.Quanlyvitrihanghoa
 
             cbT.SelectedIndex = rs1 - 1;
             cbN.SelectedIndex = rs2 - 1;
+            */
+
+            //
 
             String pos = arr[1] + "-" + arr[2] + "-" + arr[3];
-            if (dataTable != null)
+
+            //Thao tác ui và chuẩn bị dữ liệu cho thêm sửa xóa
+            if (checkLock.Checked == true)
             {
-                foreach (DataRow row in dataTable.Rows)
+                if (hd == "Them")
                 {
-                    if (row[9].ToString() == pos)
+                    HanhDong = "Thêm";
+                    list_pos.Add(pos);
+                    ((Label)sender).BackColor = lb_Color.BackColor;
+                }
+                if (hd == "Sua")
+                {
+                    HanhDong = "Đảo chuyển";
+                    if (vtBD == "")
                     {
-                        DateTime bd = (DateTime)row[5];
-                        DateTime kt = (DateTime)row[6];
-                        lb_MaHH.Text = "Mã hàng hóa: " + row[0];
-                        lb_TenHH.Text = "Tên hàng hóa: " + row[1];
-                        lb_loaiHH.Text = "Loại hàng hóa: " + row[3];
-                        lb_DVT.Text = "Đơn vị tính: " + row[4];
-                        lb_ThoiGian.Text = "Thời gian lưu trữ: " + bd.ToString("dd/MM/yyyy") + " - " + kt.ToString("dd/MM/yyyy");
-                        lb_TrangThai.Text = "Trạng thái hàng hóa: " + row[7];
-                        lb_Khachhang.Text = "Khách hàng: " + row[8];
-                        MaVT = row[11].ToString();
-                        MaHH = row[0].ToString();
-                        IDColor = row[12].ToString();
-                        ToaDoBanDau = row[9].ToString();
-
-                        //KIEN UPDATE: Lay gia tri mau ngay tai o duoc click
-                        String[] argb = row[10].ToString().Split(',');
-                        int[] rgb = new int[3];
-                        try
-                        {
-                            Int32.TryParse(argb[0], out rgb[0]);
-                            Int32.TryParse(argb[1], out rgb[1]);
-                            Int32.TryParse(argb[2], out rgb[2]);
-                        }
-                        catch(Exception ex)
-                        {
-                            //
-                        }
-                        R = rgb[0];
-                        G = rgb[1];
-                        B = rgb[2];
-
-                        //string str = R + "," + G + "," + B;
-                        //MessageBox.Show(str);
-                        break;
+                        vtBD = pos;
+                        //MessageBox.Show(pos);
+                        ((Label)sender).BackColor = Color.FromArgb(206, 246, 203);
                     }
                     else
                     {
-                        lb_MaHH.Text = "Mã hàng hóa: ";
-                        lb_TenHH.Text = "Tên hàng hóa: ";
-                        lb_loaiHH.Text = "Loại hàng hóa: ";
-                        lb_DVT.Text = "Đơn vị tính: ";
-                        lb_ThoiGian.Text = "Thời gian lưu trữ: ";
-                        lb_TrangThai.Text = "Trạng thái hàng hóa: ";
-                        lb_Khachhang.Text = "Khách hàng: ";
+                        vtKT = pos;
+                        ((Label)sender).BackColor = lb_Color.BackColor;
                     }
                 }
-            }
-        }
-
-        protected void CusDoubleClick(object sender, EventArgs e)
-        {
-
-            ((Label)sender).BackColor = Color.FromArgb(R, G, B); // Click đúp để đổi màu, xác định đối tượng được chọn để set vị trí
-        }
-
-        protected void CusRightClick(object sender, MouseEventArgs e)
-        {
-
-            if (e.Button == MouseButtons.Right) // Click phải để xóa vị trí
-            {
-                //((Label)sender).BackColor = Color.FromArgb(206, 246, 203);
-                DialogResult result = MessageBox.Show("Bạn có thực sự muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (hd == "Xoa")
                 {
-                    cRUD.Them_sua_xoa("sp_xoaVT'" + MaVT + "'");
-                    cRUD.Them_sua_xoa("sp_xoaCL'" + IDColor + "'");
-                    dataTable = cRUD.getData("SELECT * FROM VT_HH_CL");
-                    loadData_VT(dataTable, "MaHH");
+                    HanhDong = "Xóa";
+                    list_pos.Add(pos);
+                    ((Label)sender).BackColor = Color.FromArgb(206, 246, 203);
                 }
+                return;
+            };
+            //
+
+            if (dataTable == null) return;
+
+            //load_LabelINFO(null);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (row[9].ToString() == pos)
+                {
+                    //xử lí dữ liệu và load lên label info
+                    String[] data = new string[8];
+                    for (int i = 0; i < 8; i++)
+                    {
+                        if (i != 4 && i != 5)
+                        {
+                            if (i < 2) data[i] = row[i].ToString();
+                            else data[i] = row[i + 1].ToString();
+                        }
+                        else
+                        {
+                            DateTime dt = (DateTime)row[i + 1];
+                            data[i] = dt.ToString("dd/MM/yyyy");
+                        }
+                    }
+                    load_LabelINFO(data);
+                    //
+
+                    //Đưa màu ra label
+                    if (row[10].ToString() != "")
+                    {
+                        String[] argb = row[10].ToString().Split(',');
+                        int[] rgb = new int[3];
+
+                        Int32.TryParse(argb[0], out rgb[0]);
+                        Int32.TryParse(argb[1], out rgb[1]);
+                        Int32.TryParse(argb[2], out rgb[2]);
+
+                        lb_Color.BackColor = Color.FromArgb(rgb[0], rgb[1], rgb[2]);
+                    }
+                    //
+                    break;
+
+                }
+                else
+                {
+                    load_LabelINFO(null);
+                    lb_Color.BackColor = Color.FromArgb(227, 239, 255);
+                }
+
             }
         }
 
-        //date 30/05/2021
+        //date 06/06/2021
         protected void frmVitri_Load(object sender, EventArgs e)
         {
-            String sql = "SELECT * FROM VT_HH_CL";
-            dataTable = cRUD.getData(sql);
 
-            loadData_VT(dataTable, "MaHH");
+            loadForm();
             loadcb();
         }
 
+        public void loadForm()
+        {
+            String sql = "SELECT * FROM VT_HH_CL";
+            dataTable = cRUD.getData(sql);
+            loadData_VT(dataTable, "MaHH");
+
+
+            load_LabelINFO(null);
+            reset_cb();
+            reset_varible();
+
+            checkLock.Checked = false;
+            btnChonHangHoa.Enabled = true;
+            setButton("00001");
+        }
+
+        public void reset_varible()
+        {
+            hd = vtBD = vtKT = "";
+            list_pos.Clear();
+        }
+
+        public void reset_cb()
+        {
+            cbG.ResetText();
+            cbN.ResetText();
+            cbT.ResetText();
+            cbHead.ResetText();
+            cbData.DataSource = null;
+        }
+
+        public void setButton(String code)
+        {
+            int i = 0;
+            foreach (var control in groupBox2.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
+            {
+                if (code[i] == '1') control.Enabled = true;
+                else control.Enabled = false;
+                i++;
+            }
+        }
         //date 30/05/2021
         public void loadData_VT(DataTable table, String headData)
         {
@@ -233,41 +306,145 @@ namespace DoAn1.Quanlyvitrihanghoa
 
         public void loadLabel()
         {
+            String[] info =
+            {
+                frmChonHangHoa.MaHH,
+                frmChonHangHoa.TenHH,
+                frmChonHangHoa.MaLoai,
+                frmChonHangHoa.MaDVT,
+                frmChonHangHoa.BatDauLuuTru.ToString("dd/MM/yyyy"),
+                frmChonHangHoa.KetThucLuuTru.ToString("dd/MM/yyyy"),
+                frmChonHangHoa.TrangThai,
+                frmChonHangHoa.MaKH
+            };
+            load_LabelINFO(info);
+            /*
             lb_MaHH.Text = "Mã hàng hóa: " + frmChonHangHoa.MaHH;
             lb_TenHH.Text = "Tên hàng hóa: " + frmChonHangHoa.TenHH;
             lb_loaiHH.Text = "Loại hàng hóa: " + frmChonHangHoa.MaLoai;
             lb_DVT.Text = "Đơn vị tính: " + frmChonHangHoa.MaDVT;
-            lb_ThoiGian.Text = "Thời gian lưu trữ: " + frmChonHangHoa.BatDauLuuTru.ToString("dd/MM/yyyy") + " - " + frmChonHangHoa.KetThucLuuTru.ToString("dd/MM/yyyy");
+            lb_tgBD.Text = "Thời gian lưu trữ: " + frmChonHangHoa.BatDauLuuTru.ToString("dd/MM/yyyy") + " - " + frmChonHangHoa.KetThucLuuTru.ToString("dd/MM/yyyy");
             lb_TrangThai.Text = "Trạng thái hàng hóa: " + frmChonHangHoa.TrangThai;
             lb_Khachhang.Text = "Khách hàng: " + frmChonHangHoa.MaKH;
+            */
         }
 
-        //date 28/05/2021
+        //date 03/06/2021
         public void loadcb()
         {
             String sql = "Select * from HH";
             DataTable table = cRUD.getData(sql);
 
+            String[] display = { "Mã hàng hóa", "Tên hàng hóa", "Tồn kho", "Tên loại", "Đơn vị tính", "Bắt đầu lưu trữ", "Kết thúc lưu trữ", "Tên khách hàng", "Màu sắc" };
+            int i = 0;
+
+
             foreach (DataColumn column in table.Columns)
             {
-                cbHead.Items.Add(column.ColumnName);
+                if (column.ColumnName.ToString() != "TrangThai")
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = display[i];
+                    item.Value = column.ColumnName.ToString();
+
+                    cbHead.Items.Add(item);
+                    i++;
+                }
             }
-            //cbHead.ValueMember = table.Rows[0];
         }
 
-        private void btnReload_Click(object sender, EventArgs e)
+        private void checkLock_CheckedChanged(object sender, EventArgs e)
         {
-            loadData_VT(dataTable, "MaHH");
+            if (checkLock.Checked == true)
+            {
+                setButton("11101");
+                btnChonHangHoa.Enabled = false;
+            }
+            else
+            {
+                btnChonHangHoa.Enabled = true;
+                setButton("00001");
+            }
         }
 
-        //date 29/05/2021
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            hd = "Them";
+            setButton("10011");
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            hd = "Xoa";
+            setButton("00111");
+        }
+
+        private void btnThucThi_Click(object sender, EventArgs e)
+        {
+            if (hd == "Them") ThemVT();
+            if (hd == "Sua") SuaVT();
+            if (hd == "Xoa") XoaVT();
+            loadForm();
+        }
+
+        public void ThemVT()
+        {
+            String[] value = lb_MaHH.Text.Split(' ');
+            String MaHH = value[3];
+            string sql2 = "UPDATE HANG_HOA SET TrangThai = N'Đã lưu kho' WHERE MaHH = '" + frmChonHangHoa.MaHH + "'";
+
+            for (int i = 0; i < list_pos.Count(); i++)
+            {
+                string TrangThai = "Đã có hàng";
+                string sql1 = "sp_themVT '" + MaHH + "','" + list_pos[i] + "','" + TrangThai + "'";
+                if (cRUD.Them_sua_xoa(sql1))
+                {
+                    cRUD.Them_sua_xoa(sql2); //sql1thực hiện thành công -> Đã lưu kho
+                }
+                string sql3 = "INSERT INTO LICHSU_VITRI(MaHH,MaNV,ToaDoBanDau,NgayGio,HanhDong) VALUES('" + MaHH + "','" + MaNV + "','" + list_pos[i] + "','" + NgayGioHienTai + "',N'" + HanhDong + "')";
+                cRUD.Them_sua_xoa(sql3);
+            }
+
+        }
+        public void SuaVT()
+        {
+            String[] value = lb_MaHH.Text.Split(' ');
+            String MaHH = value[3];
+            string TrangThai = "Đã có hàng";
+
+            string sql1 = "sp_suaVT '" + MaHH + "','" + vtBD + "','" + vtKT + "','" + TrangThai + "'";
+            string sql2 = "INSERT INTO LICHSU_VITRI(MaHH,MaNV,ToaDoBanDau,ToaDoSauCung,NgayGio,HanhDong) VALUES('" + MaHH + "','" + MaNV + "','" + vtBD + "','" + vtKT + "','" + NgayGioHienTai + "',N'" + HanhDong + "')";
+            cRUD.Them_sua_xoa(sql1);
+            cRUD.Them_sua_xoa(sql2);
+        }
+        public void XoaVT()
+        {
+            for (int i = 0; i < list_pos.Count(); i++)
+            {
+                String[] value = lb_MaHH.Text.Split(' ');
+                String MaHH = value[3];
+                cRUD.Them_sua_xoa("sp_xoaVT'" + list_pos[i] + "'");
+                string sql2 = "INSERT INTO LICHSU_VITRI(MaHH,MaNV,ToaDoBanDau,NgayGio,HanhDong) VALUES('" + MaHH + "','" + MaNV + "','" + list_pos[i] + "','" + NgayGioHienTai + "',N'" + HanhDong + "')";
+                cRUD.Them_sua_xoa(sql2);
+            }
+        }
+
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            hd = "Sua";
+            setButton("01011");
+        }
+
+        //date 03/06/2021
         private void cbHead_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String value = cbHead.SelectedItem.ToString();
-            String sql = "Select DISTINCT "+value+" from HH";
+            String value = (cbHead.SelectedItem as ComboboxItem).Value.ToString();
+            String sql = "Select DISTINCT " + value + " from VT_HH_CL";
             DataTable table = cRUD.getData(sql);
 
-            MessageBox.Show(value);
+            //MessageBox.Show(value);
+
             cbData.DataSource = table;
             cbData.ValueMember = value;
             cbData.DisplayMember = value;
@@ -275,91 +452,106 @@ namespace DoAn1.Quanlyvitrihanghoa
 
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (MaVT == "null") // Thêm vị trí
-            {
-                int T = cbT.SelectedIndex + 1;
-                int N = cbN.SelectedIndex + 1;
-                ToaDo = cbG.Text + "-" + T + "-" + N;
-                string TrangThai = "Đã có hàng";
-                string sql1 = "sp_themVT '" + frmChonHangHoa.MaHH + "','" + ToaDo + "','" + TrangThai + "'";
-                string sql2 = "sp_themCL '" + color_str + "','" + frmChonHangHoa.MaHH + "'";
-                string sql3 = "UPDATE HANG_HOA SET TrangThai = N'Đã lưu kho' WHERE MaHH = '" + frmChonHangHoa.MaHH + "'";
-                if (cRUD.Them_sua_xoa(sql1))
-                {
-                    if (cRUD.Them_sua_xoa(sql2))
-                    {
-                        cRUD.Them_sua_xoa(sql3); //sql1 + sql2 thực hiện thành công -> Đã lưu kho
-                    }
-                    
-                }
-                String sql = "SELECT * FROM VT_HH_CL";
-                dataTable = cRUD.getData(sql);
-                loadData_VT(dataTable, "MaHH");
-            }
-            else // Sửa vị trí
-            {
-                int T = cbT.SelectedIndex + 1;
-                int N = cbN.SelectedIndex + 1;
-                ToaDo = cbG.Text + "-" + T + "-" + N;
-                string TrangThai = "Đã có hàng";
-                string sql1 = "sp_suaVT '" + MaVT + "','" + MaHH + "','" + ToaDo + "','" + TrangThai + "'";
-                string sql2 = "UPDATE COLOR_HANGHOA SET Color = '" + color_str + "' WHERE ID = '" + IDColor + "'";
-                string sql3 = "INSERT INTO LICHSU_VITRI(MaHH,MaNV,ToaDoBanDau,ToaDoSauCung,NgayGio) VALUES('" + MaHH + "','" + MaNV + "','" + ToaDoBanDau +"','" + ToaDo + "','"+NgayGioHienTai+"')";
-                cRUD.Them_sua_xoa(sql1);
-                cRUD.Them_sua_xoa(sql2);
-                if(ToaDo != ToaDoBanDau)
-                {
-                    cRUD.Them_sua_xoa(sql3); // Lưu lịch sử vị trí 
-                }
-                
-                String sql = "SELECT * FROM VT_HH_CL";
-                dataTable = cRUD.getData(sql);
-                loadData_VT(dataTable, "MaHH");
-                MaVT = "null";
-            }
-        }
-
-        //date 30/05/2021
+        //date 03/06/2021
         private void btnLoc_Click(object sender, EventArgs e)
         {
             DataTable table = dataTable;
-
-            if (cbData.Text != "")
+            try
             {
-                String sql = cbHead.SelectedItem.ToString() + " = " + "'" + cbData.Text + "'";
-                //MessageBox.Show(sql);
-                try
+                String value = (cbHead.SelectedItem as ComboboxItem).Value.ToString();
+                if (cbData.Text != "")
                 {
+                    String sql = value + " = " + "'" + cbData.Text + "'";
                     table = table.Select(sql).CopyToDataTable();
-                }catch(Exception ex)
-                {
-                    MessageBox.Show("Không tìm thấy hàng hóa đó!");
+                    //table = table.Select(sql).
                 }
-                
-
+                loadData_VT(table, value);
             }
-            loadData_VT(table, cbHead.SelectedItem.ToString());
+            catch
+            {
+                //
+            }
+
+        }
+
+        //date 6/6/2021
+        public void load_LabelINFO(String[] info)
+        {
+            Label[] lb = { lb_MaHH, lb_TenHH, lb_loaiHH, lb_DVT, lb_tgBD, lb_tgKT, lb_TrangThai, lb_Khachhang };
+            if (info == null)
+            {
+                for (int i = 0; i < lb.Length; i++)
+                {
+                    lb[i].Text = headname[i];
+                }
+            }
+            else
+            {
+                for (int i = 0; i < lb.Length; i++)
+                {
+                    lb[i].Text = headname[i] + info[i];
+                }
+            }
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            loadForm();
         }
 
         private void btnChonHangHoa_Click(object sender, EventArgs e)
         {
             frmChonHangHoa frm = new frmChonHangHoa();
             frm.ShowDialog();
+            string Color_str = frmChonHangHoa.Color_str;
+            string Color_str_2 = frmThemMauSac_ChonHangHoa.color_str;
+            if (Color_str != "")
+            {
+                String[] argb = Color_str.Split(',');
+                int[] rgb = new int[3];
+                Int32.TryParse(argb[0], out rgb[0]);
+                Int32.TryParse(argb[1], out rgb[1]);
+                Int32.TryParse(argb[2], out rgb[2]);
+
+                R = rgb[0];
+                G = rgb[1];
+                B = rgb[2];
+
+                lb_Color.BackColor = Color.FromArgb(R, G, B);
+            }
+            else
+            {
+
+                String[] argb = Color_str_2.Split(',');
+                int[] rgb = new int[3];
+                Int32.TryParse(argb[0], out rgb[0]);
+                Int32.TryParse(argb[1], out rgb[1]);
+                Int32.TryParse(argb[2], out rgb[2]);
+
+                R = rgb[0];
+                G = rgb[1];
+                B = rgb[2];
+
+                lb_Color.BackColor = Color.FromArgb(R, G, B);
+            }
         }
 
         private void btnChonMauSac_Click(object sender, EventArgs e)
         {
-            ColorDialog clg = new ColorDialog();
-            if (clg.ShowDialog() == DialogResult.OK)
-            {
-                R = clg.Color.R;
-                G = clg.Color.G;
-                B = clg.Color.B;
-                color_str = R + "," + G + "," + B;
-                //MessageBox.Show(color_str);
-            }
+
+            frmQuanLyMauSac frm = new frmQuanLyMauSac();
+            frm.ShowDialog();
+        }
+    }
+
+    public class ComboboxItem
+    {
+        public string Text { get; set; }
+        public object Value { get; set; }
+
+        public override string ToString()
+        {
+            return Text;
         }
     }
 }

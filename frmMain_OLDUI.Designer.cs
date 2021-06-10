@@ -59,6 +59,7 @@ namespace DoAn1
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
             this.rbtnLapPN = new System.Windows.Forms.RibbonButton();
+            this.rbtnLapPX = new System.Windows.Forms.RibbonButton();
             this.rbBaoCao = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel15 = new System.Windows.Forms.RibbonPanel();
             this.rbtnBCHangTon = new System.Windows.Forms.RibbonButton();
@@ -81,7 +82,6 @@ namespace DoAn1
             this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
-            this.rbtnLapPX = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -369,6 +369,17 @@ namespace DoAn1
             this.rbtnLapPN.Text = "Lập phiếu nhập";
             this.rbtnLapPN.Click += new System.EventHandler(this.rbtnPhieuNhap_Click);
             // 
+            // rbtnLapPX
+            // 
+            this.rbtnLapPX.Image = ((System.Drawing.Image)(resources.GetObject("rbtnLapPX.Image")));
+            this.rbtnLapPX.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnLapPX.LargeImage")));
+            this.rbtnLapPX.MinimumSize = new System.Drawing.Size(100, 0);
+            this.rbtnLapPX.Name = "rbtnLapPX";
+            this.rbtnLapPX.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLapPX.SmallImage")));
+            this.rbtnLapPX.Text = "Lập phiếu xuất";
+            this.rbtnLapPX.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rbtnLapPX.Click += new System.EventHandler(this.rbtnLapPX_Click);
+            // 
             // rbBaoCao
             // 
             this.rbBaoCao.Name = "rbBaoCao";
@@ -486,7 +497,7 @@ namespace DoAn1
             this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tcMain.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tcMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.tcMain.BackgroundImage = global::DoAn1.Properties.Resources.Warehouse_Background1;
             this.tcMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tcMain.BorderColor = System.Drawing.SystemColors.ControlLight;
@@ -496,6 +507,7 @@ namespace DoAn1
             this.tcMain.MenuRenderer = null;
             this.tcMain.Name = "tcMain";
             this.tcMain.Size = new System.Drawing.Size(959, 549);
+            this.tcMain.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
             this.tcMain.TabCloseButtonImage = null;
             this.tcMain.TabCloseButtonImageDisabled = null;
             this.tcMain.TabCloseButtonImageHot = null;
@@ -555,17 +567,6 @@ namespace DoAn1
             this.ribbonButton16.Name = "ribbonButton16";
             this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
             this.ribbonButton16.Text = "Lập phiếu xuất";
-            // 
-            // rbtnLapPX
-            // 
-            this.rbtnLapPX.Image = ((System.Drawing.Image)(resources.GetObject("rbtnLapPX.Image")));
-            this.rbtnLapPX.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnLapPX.LargeImage")));
-            this.rbtnLapPX.MinimumSize = new System.Drawing.Size(100, 0);
-            this.rbtnLapPX.Name = "rbtnLapPX";
-            this.rbtnLapPX.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLapPX.SmallImage")));
-            this.rbtnLapPX.Text = "Lập phiếu xuất";
-            this.rbtnLapPX.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.rbtnLapPX.Click += new System.EventHandler(this.rbtnLapPX_Click);
             // 
             // frmMain
             // 

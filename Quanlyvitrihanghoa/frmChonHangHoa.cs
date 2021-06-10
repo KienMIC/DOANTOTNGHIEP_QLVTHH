@@ -28,10 +28,12 @@ namespace DoAn1.Quanlyvitrihanghoa
         public static string SoLuong = "";
         public static string SoKhoi = "";
         public static string TrangThai = "";
+        public static string Color_str = "";
+        public static int R, G, B;
 
         public void taiDuLieu()
         {
-            sql = "SELECT * FROM HH WHERE TonKho >0";
+            sql = "SELECT * FROM HH_MS WHERE TonKho >0";
             dgvHangHoa.DataSource = cls.getData(sql);
         }
 
@@ -40,6 +42,30 @@ namespace DoAn1.Quanlyvitrihanghoa
             taiDuLieu();
             dgvHangHoa.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvHangHoa.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
+            foreach (DataGridViewRow row in dgvHangHoa.Rows)
+            {
+                try
+                {
+                    Color_str = row.Cells[9].Value.ToString();
+                    //Row đầu tiên là header, row này trả về null nên try catch để chương trình không bị break
+                }
+                catch { continue; }
+                if(Color_str != "")
+                {
+                    String[] argb = Color_str.Split(',');
+                    int[] rgb = new int[3];
+                    Int32.TryParse(argb[0], out rgb[0]);
+                    Int32.TryParse(argb[1], out rgb[1]);
+                    Int32.TryParse(argb[2], out rgb[2]);
+
+                    R = rgb[0];
+                    G = rgb[1];
+                    B = rgb[2];
+
+                    row.Cells[9].Style.BackColor = Color.FromArgb(R, G, B);
+                    row.Cells[9].Style.ForeColor = Color.FromArgb(R, G, B);
+                }
+            }
         }
 
 
@@ -53,6 +79,13 @@ namespace DoAn1.Quanlyvitrihanghoa
             BatDauLuuTru = (DateTime)dgvHangHoa.CurrentRow.Cells[5].Value;
             KetThucLuuTru = (DateTime)dgvHangHoa.CurrentRow.Cells[6].Value;
             TrangThai = dgvHangHoa.CurrentRow.Cells[7].Value.ToString();
+            Color_str = dgvHangHoa.CurrentRow.Cells[9].Value.ToString();
+            if(Color_str == "")
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn màu cho hàng hóa trước khi tương tác vị trí");
+                frmThemMauSac_ChonHangHoa frm = new frmThemMauSac_ChonHangHoa();
+                frm.ShowDialog();
+            }
             (System.Windows.Forms.Application.OpenForms["frmVitri"] as frmVitri).loadLabel();
             this.Close();
         }
